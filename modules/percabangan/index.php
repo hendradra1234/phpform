@@ -22,7 +22,7 @@
                 <input type="number" name="bb" placeholder = "Masukkan berat badan anda"/>
             </div>
             <div class = "form-group">
-                <input class = "secondary-button" type="submit" name="Input" value="Input"/>
+                <input class = "btn btn-success" type="submit" name="Input" value="Input"/>
             </div>
         </form>
     </body>

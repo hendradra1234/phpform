@@ -1,3 +1,6 @@
+<?php
+    $arrNilai = array("Nur" => 75, "Agus" => 85, 'Yuyun' => 90);
+?>
 <html>
     <head>
         <title>UTS DPW Pengolahan Form - Form Array</title>
@@ -9,17 +12,42 @@
     <body>
         <h1>Form Array</h1>
         <form action="" method="POST" name="input">
-            <label>Nama Anda</label>
+            <label>Input Nama Pertama</label>
             <div class = "form-group">
-                <input type="text" name="nama" placeholder = "Masukkan nama anda"/>
+                <input type="text" name="nama1" placeholder = "Masukkan Nama Pertama"/>
             </div>
-            <button type="submit" name="Input" value="Input">Submit</button>
+            <label>Input Nama Kedua</label>
+            <div class = "form-group">
+                <input type="text" name="nama2" placeholder = "Masukkan Nama Kedua"/>
+            </div>
+            <label>Input Nama Ketiga</label>
+            <div class = "form-group">
+                <input type="text" name="nama3" placeholder = "Masukkan Nama Ketiga"/>
+            </div>
+            <div class = "form-group">
+                <input class = "btn btn-success" type="submit" name="Input" value="Input"/>
+            </div>
         </form>
     </body>
 </html>
 <?php
     if (isset($_POST["Input"])) {
-        $nama= $_POST["nama"];
-        echo "Nama Anda : <b>$nama</b>";
+        $nama1 = $_POST["nama1"];
+        $nama2 = $_POST["nama2"];
+        $nama3 = $_POST["nama3"];
+
+        $nama1Nilai = $arrNilai[$nama1] ?? "<strong>Oops Nilai $nama1 Tidak ada di Database</strong>";
+        $nama2Nilai = $arrNilai[$nama2] ?? "<strong>Oops Nilai $nama2 Tidak ada di Database</strong>";
+        $nama3Nilai = $arrNilai[$nama3] ?? "<strong>Oops Nilai $nama3 Tidak ada di Database</strong>";
+
+        echo "<h4>HASIL ARRAY</h4>";
+        echo "============================<br>";
+        echo "
+        <p>
+            Nilai $nama1 Adalah $nama1Nilai<br>
+            Nilai $nama2 Adalah $nama2Nilai<br>
+            Nilai $nama3 Adalah $nama3Nilai<br>
+        </p>
+        ";
     }
 ?>
