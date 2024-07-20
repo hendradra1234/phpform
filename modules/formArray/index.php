@@ -1,5 +1,14 @@
 <?php
     $arrNilai = array("Nur" => 75, "Agus" => 85, 'Yuyun' => 90);
+
+    function build_table($arr) {
+        $html = "<table>";
+        foreach ($arr as $name => $nilai) {
+            $html .= "<tr><td>$name</td><td>$nilai</td></tr>";
+        }
+        $html .= "</table>";
+        return $html;
+    }
 ?>
 <html>
     <head>
@@ -11,6 +20,14 @@
     </head>
     <body>
         <h1>Form Array</h1>
+
+        <h3>Data</h3>
+
+        <div class = "content">
+            <?php echo build_table($arrNilai); ?>
+        </div>
+
+        <h5>Check Data</h5>
         <form action="" method="POST" name="input">
             <label>Input Nama Pertama</label>
             <div class = "form-group">
