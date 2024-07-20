@@ -9,17 +9,46 @@
     <body>
         <h1>Percabangan</h1>
         <form action="" method="POST" name="input">
-            <label>Nama Anda</label>
+            <label>Input NIM</label>
+            <div class = "form-group">
+                <input type="text" name="nim" placeholder = "Masukkan nim anda"/>
+            </div>
+            <label>Input Nama</label>
             <div class = "form-group">
                 <input type="text" name="nama" placeholder = "Masukkan nama anda"/>
             </div>
-            <button type="submit" name="Input" value="Input">Submit</button>
+            <label>Input Berat badan</label>
+            <div class = "form-group">
+                <input type="number" name="bb" placeholder = "Masukkan berat badan anda"/>
+            </div>
+            <div class = "form-group">
+                <input class = "btn btn-success" type="submit" name="Input" value="Input"/>
+            </div>
         </form>
     </body>
 </html>
 <?php
     if (isset($_POST["Input"])) {
-        $nama= $_POST["nama"];
-        echo "Nama Anda : <b>$nama</b>";
+        $nim = $_POST["nim"];
+        $nama = $_POST["nama"];
+        $bb = $_POST["bb"];
+
+        $category = '';
+
+        if ($bb >= 70) {
+            $category = 'Gemuk';
+        } elseif ($bb >= 40 && $bb <= 69) {
+            $category = 'Sedang';
+        } elseif ($bb <= 0) {
+            $category = 'Berat badan tidak valid (pastikan di range di atas angka minus)';
+        } else {
+            $category = 'Kecil';
+        }
+        echo "<p>
+        NIM: $nim<br>
+        Nama: $nama<br>
+        Berat anda: $bb Kg<br>
+        kategori Badan: $category<br>
+        </p>";
     }
 ?>

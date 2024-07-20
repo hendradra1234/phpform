@@ -17,10 +17,10 @@
         <p>
             <label>List Tugas 1</label>
             <ul>
-                <li><a href="modules/percabangan/">Percabangan</a></li>
-                <li><a href="modules/perualangan/">Perulangan</a></li>
-                <li><a href="modules/formArray">Form Array</a></li>
-                <li><a href="modules/formOutput/">Form Output</a></li>
+                <li><a href="modules/percabangan/">1. Percabangan</a></li>
+                <li><a href="modules/perualangan/">2. Perulangan</a></li>
+                <li><a href="modules/formArray">3. Form Array</a></li>
+                <li><a href="modules/formOutput/">4. Form Output</a></li>
             </ul>
         </p>
     </body>

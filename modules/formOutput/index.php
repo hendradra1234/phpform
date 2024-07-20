@@ -9,17 +9,42 @@
     <body>
         <h1>Form Output</h1>
         <form action="" method="POST" name="input">
-            <label>Nama Anda</label>
+            <label>Masukkan Jenis Kendaraan</label>
             <div class = "form-group">
-                <input type="text" name="nama" placeholder = "Masukkan nama anda"/>
+                <input type="text" name="jenis" placeholder = "Masukkan Jenis Kendaraan"/>
             </div>
-            <button type="submit" name="Input" value="Input">Submit</button>
+            <label>Masukkan Biaya Sewa</label>
+            <div class = "form-group">
+                <input type="text" name="biayasewa" placeholder = "Masukkan Biaya Sewa"/>
+            </div>
+            <label>Masukkan Jumlah Sewa</label>
+            <div class = "form-group">
+                <input type="number" name="jmsewa" placeholder = "Masukkan Jumlah Sewa"/>
+            </div>
+            <div class = "form-group">
+                <input class = "btn btn-success" type="submit" name="Input" value="Input"/>
+            </div>
         </form>
     </body>
 </html>
+
 <?php
     if (isset($_POST["Input"])) {
-        $nama= $_POST["nama"];
-        echo "Nama Anda : <b>$nama</b>";
+        $jenis = $_POST["jenis"] ?? 'Data Kosong';
+        $biayasewa = $_POST["biayasewa"] ?? 0;
+        $jmsewa = $_POST["jmsewa"] ?? 0;
+
+        $totalsewa = $biayasewa * $jmsewa;
+
+        echo "<h4>NOTA PENYEWAAN KENDARAAN</h4>";
+        echo "============================<br>";
+        echo "
+        <p>
+            Jenis Kendaraan: <strong>$jenis</strong><br>
+            Biaya Sewa: <strong>Rp. $biayasewa Per Hari</strong><br>
+            Jumlah Sewa: <strong>$jmsewa Hari</strong><br>
+            Total: <strong>Rp. $totalsewa</strong>
+        </p>
+        ";
     }
 ?>
