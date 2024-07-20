@@ -1,5 +1,5 @@
 <?php
-    $arrNilai = array("Nur" => 75, "Agus" => 85, 'Yuyun' => 90);
+    $arrNilai = array("Nur" => 75, "Agus" => 85, 'Yuyun' => 90, 'Wawan' => 90);
 
     function build_table($arr) {
         $html = "<table>";
